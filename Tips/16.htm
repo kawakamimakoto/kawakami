@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScriptの勉強</title>
+</head>
+
+<body>
+	<h1>JavaScriptの勉強</h1>
+	<script>
+	// setTimeout, setInterval
+	var i = 0;
+
+	/*
+	var timerId = setInterval(function() {
+	console.log(++i);
+	if (i >= 5) {
+	clearInterval(timerId);
+	}
+	}, 1000);
+	*/
+
+
+	function plusOne() {
+		alert(++i);
+		var timerId = setTimeout(plusOne, 1000);
+		if (i >= 5) {
+			clearTimeout(timerId);
+		}
+	}
+	plusOne();
+	 
+	</script>
+</body>
+</html>

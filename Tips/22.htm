@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScriptの勉強</title>
+</head>
+
+<body>
+	<h1>JavaScriptの勉強</h1>
+	<ul id="myList">
+		<li>One</li>
+		<li>Two</li>
+		<li>Three</li>
+	</ul>
+
+	<script>
+		// DOM要素の動的な操作
+		// 要素の特定
+		var mylist = document.getElementById('myList');
+
+		var lis = document.getElementsByTagName('li');
+		alert(lis[1]);
+	</script>
+</body>
+</html>

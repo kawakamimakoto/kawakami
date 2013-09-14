@@ -1,0 +1,79 @@
+<script type="text/javascript">
+<!-- 
+	total = 0;
+	input = "";
+	calc = "+";
+	flg = 1;
+
+	function setValue(n){
+		flg = 0;
+		input += n;
+		document.formCalc.textCalc.value = input;
+	}
+
+	function setOperator(n){
+		if (flg==0){
+			flg = 1;
+			myWork = total + calc + input;
+			total = eval(myWork);
+			input = "";
+			document.formCalc.textCalc.value = total;
+		}
+		if (n == "="){
+			total = 0;
+			calc = "+";
+		}else{
+			calc = n;
+		}
+	}
+
+	function clearA(){
+		total = 0;
+		calc = "+";
+		input = "";
+		document.formCalc.textCalc.value = total;
+	}
+// -->
+</script>
+
+<html>
+<head>
+	<meta charset="windows-31j">
+	<title>js勉強会 簡易電卓</title>
+</head>
+
+<body>
+	<form name="formCalc" action="">
+		<tt>
+			<input type="text" name="textCalc" value="" size="20">
+			<br><br>
+			<input type="button" value="C" onclick="clearA()">
+			<br><br>
+			<input type="button" value="7" onclick="setValue('7')">
+			<input type="button" value="8" onclick="setValue('8')">
+			<input type="button" value="9" onclick="setValue('9')">
+			<input type="button" value="/" onclick="setOperator('/')">
+			<br><br>
+			<input type="button" value="4" onclick="setValue('4')">
+			<input type="button" value="5" onclick="setValue('5')">
+			<input type="button" value="6" onclick="setValue('6')">
+			<input type="button" value="*" onclick="setOperator('*')">
+			<br><br>
+			<input type="button" value="1" onclick="setValue('1')">
+			<input type="button" value="2" onclick="setValue('2')">
+			<input type="button" value="3" onclick="setValue('3')">
+			<input type="button" value="-" onclick="setOperator('-')">
+			<br><br>
+			<input type="button" value="           0          " onclick="setValue('0')">
+			<input type="button" value="+" onclick="setOperator('+')">
+			<br><br>
+			<input type="button" value="           =          " onclick="setOperator()">
+
+		</tt>
+	</form>
+
+</body>
+</html>
+
+
+
